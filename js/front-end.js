@@ -51,9 +51,9 @@ $(function() {
       // take elements visible on the current page
       if(el.hasClass('editable-style') &&
         (!el.hasClass('paged-element') || el.hasClass($('body').pageable('option').currentPage)) &&
-        (!el.hasClass('hide-on-mobile') || win.width() >= 1580)
+        (!el.hasClass('hide-on-mobile') || win.width() >= 980)
       ) {
-        if(el.hasClass('section-element') && win.width() >= 1580) {
+        if(el.hasClass('section-element') && win.width() >= 980) {
           var position = el.children('.silex-container-content').position();
           var right = position.left + el.width();
           var bottom = position.top + el.height();
@@ -95,8 +95,8 @@ $(function() {
       // handle the scroll bar manually
       // prevent the scroll bar to appear when we are only a few pixels short
       // this allows us to set width to 100% instead of 99%
-      // this will only take place on mobile with winWidth < 1580 (not needed on desktop apparently)
-      if(width < winWidth + 10 && winWidth < 1580)
+      // this will only take place on mobile with winWidth < 980 (not needed on desktop apparently)
+      if(width < winWidth + 10 && winWidth < 980)
         bodyEl.css('overflow-x', 'hidden');
       else
         bodyEl.css('overflow-x', 'auto');
@@ -110,7 +110,7 @@ $(function() {
     // set the body size to contain all the elements
     // this has to be done manually since the elements are absolutely positioned
     // only on desktop since in mobile the elements are in the flow
-    if(win.width() >= 1580 || !bodyEl.hasClass('enable-mobile')) {
+    if(win.width() >= 980 || !bodyEl.hasClass('enable-mobile')) {
       var size = {
         'min-width': width + 'px',
         'min-height': height + 'px'
@@ -136,11 +136,11 @@ $(function() {
   // only outside silex editor when the window is small enough
   // change viewport to enable mobile view scale mode
   // for "pixel perfect" mobile version
-  // bellow 960, the window width will be seen as 1580
+  // bellow 960, the window width will be seen as 980
   if(bodyEl.hasClass('silex-runtime')) {
     var winWidth = win.width();
-    if(winWidth < 960) {
-      $('meta[data-silex-viewport]').attr('content', 'width=1579, user-scalable=no, maximum-scale=1');
+    if(winWidth > 979) {
+      $('meta[data-silex-viewport]').attr('content', 'width=979, user-scalable=no, maximum-scale=1');
     }
   }
 
