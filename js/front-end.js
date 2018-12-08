@@ -137,13 +137,14 @@ $(function() {
   // change viewport to enable mobile view scale mode
   // for "pixel perfect" mobile version
   // bellow 960, the window width will be seen as 980
+/*  
   if(bodyEl.hasClass('silex-runtime')) {
     var winWidth = win.width();
     if(winWidth > 979) {
       $('meta[data-silex-viewport]').attr('content', 'width=979, user-scalable=no, maximum-scale=1');
     }
   }
-
+*/
  /**
    * list all pages from the head section
    * and open the 1st one by default
