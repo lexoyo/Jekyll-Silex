@@ -111,7 +111,7 @@ a:focus{ outline: none;}
   display: none;
 }
 /* Mobile styles */
-@media (max-width:1580px) {
+@media (max-width:980px) {
   /* hide horizontal scroll bar which appears because of residual values in css */
   html {
     overflow-x: hidden;
