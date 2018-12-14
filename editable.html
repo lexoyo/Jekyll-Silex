@@ -14,11 +14,10 @@
     <style type="text/css" class="silex-style"></style>
     <script type="text/javascript" class="silex-script">$(function() {
     var siteWidth = $('meta[name=website-width]').attr('content');
-    console.log('xx', siteWidth);
     if(siteWidth) {
         $(window).resize(function() {
             var viewportWidth = $(window).width();
-            if(viewportWidth >= 480 && viewportWidth < siteWidth) {
+            if(viewportWidth > 480 && viewportWidth < siteWidth) {
                 $('body').css({
                   'transform': 'scale(' + (viewportWidth / 1200) + ')',
                   'transform-origin': '0 0',
