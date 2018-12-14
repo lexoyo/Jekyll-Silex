@@ -51,9 +51,9 @@ $(function() {
       // take elements visible on the current page
       if(el.hasClass('editable-style') &&
         (!el.hasClass('paged-element') || el.hasClass($('body').pageable('option').currentPage)) &&
-        (!el.hasClass('hide-on-mobile') || win.width() >= 1980)
+        (!el.hasClass('hide-on-mobile') || win.width() >= 480)
       ) {
-        if(el.hasClass('section-element') && win.width() >= 1980) {
+        if(el.hasClass('section-element') && win.width() >= 480) {
           var position = el.children('.silex-container-content').position();
           var right = position.left + el.width();
           var bottom = position.top + el.height();
@@ -95,8 +95,8 @@ $(function() {
       // handle the scroll bar manually
       // prevent the scroll bar to appear when we are only a few pixels short
       // this allows us to set width to 100% instead of 99%
-      // this will only take place on mobile with winWidth < 1980 (not needed on desktop apparently)
-      if(width < winWidth + 10 && winWidth < 1980)
+      // this will only take place on mobile with winWidth < 480 (not needed on desktop apparently)
+      if(width < winWidth + 10 && winWidth < 480)
         bodyEl.css('overflow-x', 'hidden');
       else
         bodyEl.css('overflow-x', 'auto');
@@ -110,7 +110,7 @@ $(function() {
     // set the body size to contain all the elements
     // this has to be done manually since the elements are absolutely positioned
     // only on desktop since in mobile the elements are in the flow
-    if(win.width() >= 1980 || !bodyEl.hasClass('enable-mobile')) {
+    if(win.width() >= 480 || !bodyEl.hasClass('enable-mobile')) {
       var size = {
         'min-width': width + 'px',
         'min-height': height + 'px'
@@ -136,13 +136,14 @@ $(function() {
   // only outside silex editor when the window is small enough
   // change viewport to enable mobile view scale mode
   // for "pixel perfect" mobile version
-  // bellow 960, the window width will be seen as 1980
+  // bellow 960, the window width will be seen as 480
   if(bodyEl.hasClass('silex-runtime')) {
     var winWidth = win.width();
-    if(winWidth > 1979) {
-      $('meta[data-silex-viewport]').attr('content', 'width=1979, user-scalable=no, maximum-scale=1');
+    if(winWidth < 960) {
+      $('meta[data-silex-viewport]').attr('content', 'width=479, user-scalable=no, maximum-scale=1');
     }
   }
+
  /**
    * list all pages from the head section
    * and open the 1st one by default
@@ -203,12 +204,15 @@ $(function() {
   /**
    * mobile menu
    */
-  $('.silex-runtime .silex-pages .menu-button').click(function () {
+  $('.silex-runtime.enable-mobile .silex-pages .menu-button').click(function (e) {
+    e.stopPropagation();
     $(document.body).toggleClass('show-mobile-menu');
   });
-  $('.silex-runtime .silex-pages .page-element').click(function(e) {
-    window.location.hash = '#!' + this.id;
+  $('.silex-runtime.enable-mobile').click(function (e) {
     $(document.body).removeClass('show-mobile-menu');
+  });
+  $('.silex-runtime.enable-mobile .silex-pages .page-element').click(function(e) {
+    window.location.hash = '#!' + this.id;
     e.preventDefault();
   });
 
