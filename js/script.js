@@ -1,4 +1,5 @@
 
+/*
 $(function() {
     var siteWidth = $('meta[name=website-width]').attr('content');
     function doResize() {
@@ -21,3 +22,4 @@ $(function() {
         doResize();
     }
 });
+*/

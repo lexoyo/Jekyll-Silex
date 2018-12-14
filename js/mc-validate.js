@@ -137,6 +137,12 @@
 		return this.optional(element) || /^\d{5}-\d{4}$|^\d{5}$/.test(value);
 	}, "The specified US ZIP Code is invalid");
 
+	$.validator.addMethod("mc_gdpr", function (value, element, grouping_class) {
+		//if gdpr is required the user must pick at least one option.
+		var $fields = $("input:not(:hidden)", $(element).closest(grouping_class));
+		return $fields.filter(":checked").length !== 0;
+	}, "Please choose an option.");
+
 }(jQuery));
 
 // MC
@@ -204,7 +210,7 @@
 		getGroups: function (){ 
 			var groups = {};
 			$(".mc-field-group").each(function(index) {
-				var inputs = $(this).find("input:text:not(:hidden)");
+				var inputs = $(this).find("input:text:not(:hidden), input:checkbox:not(:hidden)");
 				if (inputs.length > 1) {
 					var mergeName = inputs.first().attr("name");
 					var fieldNames = $.map(inputs, function(f) { return f.name; });
@@ -353,6 +359,7 @@
 	$.validator.addClassRules("birthday", { digits: true, mc_birthday: ".datefield" });
 	$.validator.addClassRules("datepart", { digits: true, mc_date: ".datefield" });
 	$.validator.addClassRules("phonepart", { digits: true, mc_phone: ".phonefield" });
+	$.validator.addClassRules("gdpr", { mc_gdpr: ".gdprRequired" });
 
 	// Evil Popup
 	$('#mc_embed_signup a.mc_embed_close').click(function(){ 
