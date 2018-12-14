@@ -32,16 +32,27 @@ $(function() {
       // scale the website to fit the window
       if(siteWidth) {
         var winWidth = win.width();
-        if(winWidth > 480 && winWidth < siteWidth) {
+        if(winWidth < 480) {
+          $('body').css({
+            'transform': 'scale(' + (winWidth / 480) + ')',
+            'transform-origin': '0 0',
+            'min-width': '480px',
+          })
+        }
+        else if(winWidth > 480 && winWidth < siteWidth) {
             $('body').css({
               'transform': 'scale(' + (winWidth / 1200) + ')',
               'transform-origin': '0 0',
+              'min-width': '1200px',
             })
         }
         else {
-            $('body').css({
+          // case of winWidth === 480 || winWidth > siteWidth
+          // reset transform
+          $('body').css({
               'transform': '',
               'transform-origin': '',
+              'min-width': '',
             })
         }
       }
@@ -56,6 +67,7 @@ $(function() {
     $(document).trigger('silex:resize');
   };
 
+  /* this doesn't work? at least not in google bot mobile
   // only outside silex editor when the window is small enough
   // change viewport to enable mobile view scale mode
   // for "pixel perfect" mobile version
@@ -66,8 +78,8 @@ $(function() {
       $('meta[data-silex-viewport]').attr('content', 'width=479, user-scalable=no, maximum-scale=1');
     }
   }
-
- /**
+  */
+  /**
    * list all pages from the head section
    * and open the 1st one by default
    */
@@ -127,12 +139,15 @@ $(function() {
   /**
    * mobile menu
    */
-  $('.silex-runtime .silex-pages .menu-button').click(function () {
+  $('.silex-runtime.enable-mobile .silex-pages .menu-button').click(function (e) {
+    e.stopPropagation();
     $(document.body).toggleClass('show-mobile-menu');
   });
-  $('.silex-runtime .silex-pages .page-element').click(function(e) {
-    window.location.hash = '#!' + this.id;
+  $('.silex-runtime.enable-mobile').click(function (e) {
     $(document.body).removeClass('show-mobile-menu');
+  });
+  $('.silex-runtime.enable-mobile .silex-pages .page-element').click(function(e) {
+    window.location.hash = '#!' + this.id;
     e.preventDefault();
   });
 
