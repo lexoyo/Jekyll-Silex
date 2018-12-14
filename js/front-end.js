@@ -20,27 +20,11 @@ $(function() {
   // be careful since it will change after undo/redo or open file in Silex editor
   var bodyEl = $('body');
 
-   /**
-   * returns a function that will not be called more than every `wait` seconds
-   */
-  function debounce(func, wait) {
-    var timeout;
-    return function() {
-      var context = this, args = arguments;
-      var later = function() {
-        clearTimeout(timeout);
-        timeout = null;
-        func.apply(context, args);
-      };
-      if(!timeout) timeout = setTimeout(later, wait);
-    };
-  };
-
   /**
    * window resize event
    */
   var siteWidth = $('meta[name=website-width]').attr('content');
-  var resizeBody = debounce(function (event){
+  var resizeBody = function (event){
     var bodyEl = $('body');
     // behavior which is not the same in Silex editor and outside the editor
     if(bodyEl.hasClass('silex-runtime')) {
@@ -70,7 +54,7 @@ $(function() {
     }
     // dispatch an event so that components can update
     $(document).trigger('silex:resize');
-  }, 500);
+  };
 
   // only outside silex editor when the window is small enough
   // change viewport to enable mobile view scale mode
