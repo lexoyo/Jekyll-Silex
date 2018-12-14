@@ -6,4 +6,5 @@
 .white p {color: #ffffff;}.white a {color: #ffffff;}.white [data-silex-href] {color: #ffffff;}
 .group-style-1 h3 {font-size: 18px;}.group-style-1 p {font-size: 18px;}.group-style-1 a {font-size: 18px;}.group-style-1 [data-silex-href] {font-size: 18px;}
 #mc_embed_signup input.mce_inline_error {border-color: #6B0505;}#mc_embed_signup div.mce_inline_error {margin: 0 0 1em 0; padding: 5px 10px; background-color: #6B0505; font-weight: bold; z-index: 1; color: #fff;}
-#mc_embed_signup input.mce_inline_error {border-color: #6B0505;}#mc_embed_signup div.mce_inline_error {margin: 0 0 1em 0; padding: 5px 10px; background-color: #6B0505; font-weight: bold; z-index: 1; color: #fff;}body.silex-runtime {opacity: 1;}
+#mc_embed_signup input.mce_inline_error {border-color: #6B0505;}#mc_embed_signup div.mce_inline_error {margin: 0 0 1em 0; padding: 5px 10px; background-color: #6B0505; font-weight: bold; z-index: 1; color: #fff;}
+.website-width {width: 1200px;}body.silex-runtime {opacity: 1;}
