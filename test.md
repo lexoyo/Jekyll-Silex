@@ -4,3 +4,11 @@ quote: "Marc, webmaster groupe Accor: <br>Ces vidéos sont très utiles, retour 
 ---
 # Webmasters on vous demande du marketing?
 ## Embrassez la puissance des outils libres et de notre communauté.
+
+{% capture section1 %}
+I'm the main body content.
+{% endcapture %}
+
+{% capture section2 %}
+And I'm some other stuff
+{% endcapture %}
