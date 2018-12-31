@@ -1,5 +1,6 @@
 ---
 layout: landing
+title: test 123
 ---
 aaa
 
