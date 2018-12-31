@@ -6,7 +6,9 @@ quote: "Marc, webmaster groupe Accor: <br>Ces vidéos sont très utiles, retour 
 ## Embrassez la puissance des outils libres et de notre communauté.
 
 {% capture section1 %}
-I'm the main body content.
+### title 
+I'm the main [body](https://www.silex.me) content.
+
 {% endcapture %}
 
 {% capture section2 %}
