@@ -6,7 +6,7 @@ collections:
 # Site wide configuration
 ####################################
 #
-title: Test lexo
+title: Webmasters
 email:
 description: A simple and awesome blog theme powered by jekyll.
 url: https://cto-bro.com
@@ -42,7 +42,7 @@ owner:
   bio: "A simple and awesome blog theme powered by jekyll."
   email:
   disqus-shortname:
-  twitter: #username
+  twitter: silexlabs
   facebook: #username
   google:
     plus: #username
