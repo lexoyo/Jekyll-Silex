@@ -99,8 +99,7 @@ $(function() {
     <div id="mc_embed_signup_scroll">
 	<p>{{ (site.sections | where: "lang", page.lang | where: "title", "form" | first).content }} »</p>
 <div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address </label>
-	<input value="" name="EMAIL" class="required email" id="mce-EMAIL" aria-required="true" type="email">
+	<input value="" name="EMAIL" class="required email" id="mce-EMAIL" aria-required="true" type="email" placeholder="{{ (site.sections | where: &quot;lang&quot;, page.lang | where: &quot;title&quot;, &quot;form&quot; | first).label }}">
 	<input value="{{ page.lang }}" name="lang" class="" id="mce-lang" aria-required="true" type="hidden">
 </div>
 <!--
