@@ -7,3 +7,15 @@ ___
 {{ site.sections | where: "lang", page.lang | jsonify }}
 ```
 
+___
+
+```
+{{ site.sections | where: "lang", page.lang | where: "slug", "fr_01heading" | first | jsonify }}
+```
+
+___
+
+```
+{{ (site.sections | where: "lang", page.lang | where: "slug", "fr_01heading" | first).content }}
+```
+
