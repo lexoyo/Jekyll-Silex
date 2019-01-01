@@ -1,6 +1,6 @@
 ---
 lang: en
 title: form
-label: "votre.email@example.com"
+label: "your.email@example.com"
 ---
-Visionnez les 3 vidéos « Outils Gratuits pour les Webmasters qui font du Marketing
+Watch the 3 videos "Free Tools for Webmasters who do Marketing"
