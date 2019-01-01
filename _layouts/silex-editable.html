@@ -97,10 +97,11 @@ $(function() {
 <div id="mc_embed_signup">
 <form action="https://lexoyo.us7.list-manage.com/subscribe/post?u=3ec1ea212adc44025d91ed004&amp;id=9e9c78059c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
     <div id="mc_embed_signup_scroll">
-	<p>Visionnez les 3 vidéos « Outils Gratuits pour les Webmasters qui font du Marketing »</p>
+	<p>{{ (site.sections | where: "lang", page.lang | where: "title", "form" | first).content }} »</p>
 <div class="mc-field-group">
 	<label for="mce-EMAIL">Email Address </label>
 	<input value="" name="EMAIL" class="required email" id="mce-EMAIL" aria-required="true" type="email">
+	<input value="{{ page.lang }}" name="lang" class="" id="mce-lang" aria-required="true" type="hidden">
 </div>
 <div class="mc-field-group input-group">
     <strong>Lettre d'info mensuelle </strong>
