@@ -36,8 +36,8 @@ kramdown:
 ####################################
 #
 owner:
-  name: Leonids
-  avatar: leonids-logo.png
+  name: Alex Hoyau
+  avatar: 
   job: "A jekyll theme"
   bio: "A simple and awesome blog theme powered by jekyll."
   email:
