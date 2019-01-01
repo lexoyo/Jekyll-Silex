@@ -1,28 +1,9 @@
-<head>
-    <meta charset="UTF-8">
-    <!-- generator meta tag -->
-    <!-- leave this for stats and Silex version check -->
-    <meta name="generator" content="Silex v2.2.7">
-    <!-- End of generator meta tag -->
-    <script type="text/javascript" src="js/jquery.js"></script>
-    
-    
-    <script type="text/javascript" src="js/front-end.js"></script>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/front-end.css">
+```
+{{ site.sections | jsonify }}
+```
+___
 
-    
-    
-    
-    <title>Outils Gratuits pour Webmasters qui font du Marketing - landing</title>
-    
+```
+{{ site.sections | where: "lang", page.lang | jsonify }}
+```
 
-    
-<meta name="description" content="Webmasters on vous demande du marketing ? Embrassez la puissance des outils libres et de notre communauté."><meta name="twitter:description" content="Webmasters on vous demande du marketing ? Embrassez la puissance des outils libres et de notre communauté."><meta name="og:description" content="Webmasters on vous demande du marketing ? Embrassez la puissance des outils libres et de notre communauté."><meta name="twitter:title" content="Outils Gratuits pour Webmasters qui font du Marketing"><meta name="og:title" content="Outils Gratuits pour Webmasters qui font du Marketing"><meta name="twitter:site" content="@silexlabs"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://01silex.com/tests/landing-page/assets/social.jpg"><meta name="og:image" content="http://01silex.com/tests/landing-page/assets/social.jpg"><link href="css/icon-idf.png" rel="shortcut icon"><meta name="website-width" content="1200"><meta name="viewport" content="width=device-width, initial-scale=1" data-silex-viewport=""><meta name="hostingProvider" content="jekyllpages"><meta name="websiteUrl" content="http://cto-bro.com/"><!-- Silex HEAD tag do not remove -->
-    <!-- End of Silex HEAD tag do not remove --><script src="js/script.js" type="text/javascript"></script><link href="css/styles.css" rel="stylesheet" type="text/css"><style>body { opacity: 0; transition: .25s opacity ease; }</style></head>
-
-<body class="body-initial all-style enable-mobile silex-runtime silex-published" data-silex-type="container">
-
-	{{ site.sections | jsonify }}
-
-</body>
