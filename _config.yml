@@ -6,10 +6,10 @@ collections:
 # Site wide configuration
 ####################################
 #
-title: Webmasters
+title: Free Tools for Webmasters who do Marketing
 email:
 description: A simple and awesome blog theme powered by jekyll.
-url: https://cto-bro.com
+url: http://lexoyo.me/Jekyll-Silex
 keywords: ["blog", "jekyll"]
 
 #
